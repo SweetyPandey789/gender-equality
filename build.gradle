@@ -1,17 +1,23 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    repositories {
-        jcenter()
-        google()
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.prabhu.womensafetyapp"
+        minSdkVersion 8
+        targetSdkVersion 18
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0-alpha13'
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
     }
 }
 
-allprojects {
-    repositories {
-        jcenter()
-        google()
-    }
+dependencies {
+    compile 'com.android.support:support-v4:19.1.0'
 }
